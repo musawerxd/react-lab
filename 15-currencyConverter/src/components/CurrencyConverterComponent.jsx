@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import useCurrencyInfo from '../hooks/useCurrencyInfo'
 import useConverter from '../hooks/useConverter';
 
@@ -19,6 +19,10 @@ function CurrencyConverterComponent() {
     let result = useConverter(data, from, to, amount)
     // console.log(result)
 
+    const handleSwap = () => {
+        setFrom(to)
+        setTo(from)
+    }
 
     return (
         <div className="rounded-2xl p-8 flex items-center justify-center bg-linear-to-br from-black via-[#0f0f0f] to-gray-900 text-white">
@@ -32,7 +36,7 @@ function CurrencyConverterComponent() {
                 <div className='flex items-center justify-center gap-7'>
 
                     {/* FROM */}
-                    <div className="flex flex-col gap-2">
+                    <div className="flex flex-col gap-2 p-4 rounded-2xl bg-black">
                         <label className="text-sm text-gray-400">From</label>
                         <div className="flex gap-3">
                             <input
@@ -62,18 +66,21 @@ function CurrencyConverterComponent() {
                     </div>
 
                     {/* ARROW */}
-                    <div className="text-center text-3xl text-gray-400">
+                    <button
+                        className="text-center text-3xl text-gray-400 hover:cursor-pointer py-2 px-4 bg-blue-600 rounded-2xl flex items-center justify-center pb-3"
+                        onClick={handleSwap}>
                         ⇄
-                    </div>
+                    </button>
 
                     {/* TO */}
-                    <div className="flex flex-col gap-2">
+                    <div className="flex flex-col gap-2 p-4 rounded-2xl bg-black">
                         <label className="text-sm text-gray-400">To</label>
                         <div className="flex gap-3">
                             <input
                                 type="number"
                                 readOnly
-                                value={result ? result.toFixed(2) : "Converted amount"}
+                                placeholder="Converted amount"
+                                value={result ? result.toFixed(2) : ""}
                                 className="flex-1 bg-white/10 border border-white/10 p-3 rounded-xl focus:outline-none"
                             />
 
