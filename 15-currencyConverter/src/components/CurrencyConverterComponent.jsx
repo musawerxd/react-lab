@@ -37,9 +37,12 @@ function CurrencyConverterComponent() {
                         <div className="flex gap-3">
                             <input
                                 type="number"
-                                placeholder="Enter amount"
                                 value={amount}
-                                onChange={(e) => { setAmount(Number(e.target.value)) }}
+                                onChange={(e) => {
+                                    const val = e.target.value;
+                                    // console.log("valuessssssssss", val, typeof val)
+                                    setAmount(val === "" ? "" : Number(val))
+                                }}
                                 className="flex-1 bg-white/10 border border-white/10 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/20"
 
                             />
