@@ -70,7 +70,7 @@ function CurrencyConverterComponent() {
                             <input
                                 type="number"
                                 readOnly
-                                value={result ? result.toPrecision(5) : "Converted amount"}
+                                value={result ? result.toFixed(2) : "Converted amount"}
                                 className="flex-1 bg-white/10 border border-white/10 p-3 rounded-xl focus:outline-none"
                             />
 
