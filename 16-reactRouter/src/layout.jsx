@@ -9,7 +9,7 @@ function layout() {
     return (
         <>
             <Header />
-            <outlet />
+            <Outlet />
             <Footer />
 
         </>
