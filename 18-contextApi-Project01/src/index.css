@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+    /* Surface Colors */
+    --color-bg-light: #ffffff;
+    --color-bg-dark: #09090b;
+    /* Zinc 950 */
+
+    /* Brand / Primary Colors */
+    --color-brand: #4f46e5;
+    /* Indigo 600 */
+    --color-brand-hover: #6366f1;
+    /* Indigo 500 */
+
+    /* Text Colors */
+    --color-text-main: #27272a;
+    /* Zinc 800 */
+    --color-text-muted: #71717a;
+    /* Zinc 500 */
+    --color-text-dark-main: #fafafa;
+    /* Zinc 50 */
+    --color-text-dark-muted: #a1a1aa;
+    /* Zinc 400 */
+
+    /* Accents */
+    --color-accent: #f59e0b;
+    /* Amber 500 */
+}
+
+/* The magic variant that makes your toggle work */
+@variant dark (&:where(.dark, .dark *));
