@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+html {
+    background-color: #212121;
+    color: white;
+}
+
+#root {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
