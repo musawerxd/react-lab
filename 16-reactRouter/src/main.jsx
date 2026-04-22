@@ -7,6 +7,7 @@ import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Layout from './layout.jsx'
 import User from './components/User/User.jsx';
+import Github, { GithubInfoApi } from './components/Github/Github.jsx';
 // import { Route } from 'react-router';
 
 // const router = createBrowserRouter([
@@ -33,6 +34,7 @@ const router = createBrowserRouter(
       <Route path='' element={<Home />} />
       <Route path='about' element={<About />} />
       <Route path='user/:userId' element={<User />} />
+      <Route loader={GithubInfoApi} path='github' element={<Github />} />
 
     </Route>
   )
