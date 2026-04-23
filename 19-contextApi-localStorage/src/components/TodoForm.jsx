@@ -8,7 +8,7 @@ function TodoForm() {
     const onAdd = (e) => {
         e.preventDefault();
         if (!todo) return;
-        addTodo({ id: Date.now, todo: todo, completed: false })
+        addTodo({ id: Date.now(), todo: todo, completed: false })
         setTodo("")
     }
 
@@ -16,7 +16,7 @@ function TodoForm() {
         setTodo(e.target.value)
     }
     return (
-        <form className="flex">
+        <form onSubmit={onAdd} className="flex">
             <input
                 value={todo}
                 onChange={handleChange}
@@ -26,7 +26,6 @@ function TodoForm() {
             />
             <button
                 type="submit"
-                onSubmit={onAdd}
                 className="rounded-r-lg px-3 py-1 bg-green-600 text-white shrink-0">
                 Add
             </button>
